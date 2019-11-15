@@ -3,6 +3,7 @@ namespace Nora\App;
 
 use Nora\Kernel as Base;
 use Nora\Kernel\Event;
+use Nora\Logging;
 
 class App extends Base\Environment implements Event\SubscriberInterface
 {
@@ -53,10 +54,12 @@ class App extends Base\Environment implements Event\SubscriberInterface
             date_default_timezone_set($php['timezone']);
         }
 
-        // ロガー
-        var_dump(
-            $this->component('Logger')
-        );
+        // エラーハンドリング
+        set_error_handler([$this->logger(), 'phpErrorReport']);
+        set_exception_handler([$this->logger(), 'phpException']);
+
+        // ログを設定
+        $this->logger()->trace("起動準備完了");
     }
 
     /**
@@ -79,4 +82,13 @@ class App extends Base\Environment implements Event\SubscriberInterface
         return $this->config()->read($name);
     }
 
+    /**
+     * ロガーを取得
+     *
+     * @return Logging\Logger
+     */
+    public function logger() : Logging\Logger
+    {
+        return $this->component('logger');
+    }
 }

@@ -3,7 +3,7 @@ namespace Nora\App\Modules\Logging;
 
 use Nora\Kernel as Base;
 use Nora\Filter\Collection;
-use Nora\Logging;
+use Nora\Logging\Logging;
 
 /**
  * 設定モジュール
@@ -39,10 +39,7 @@ class Module extends Base\Module
                 {
                     $name = $env->configRead('logging.default');
                     $handlers = $env->configRead("logging.handlers.{$name}");
-                    $logger = new Logging\Logger();
-                    foreach ($handlers as $handler) {
-                        $logger->setHandler(Logging\Handler::create($handler));
-                    }
+                    $logger = Logging::createLogger($handlers);
                     return $logger;
                 }
             }
