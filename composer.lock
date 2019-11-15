@@ -4,8 +4,36 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3be4ada0395b3c2f457c56fab84fc92",
+    "content-hash": "46f8eeed8016f96120824fd82309396c",
     "packages": [
+        {
+            "name": "nora-php/filter",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@avap.codes:nora/php/filter",
+                "reference": "fb00766133508931a67961d5116e8fd1afd35f56"
+            },
+            "require": {
+                "nora-php/utility": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nora\\Filter\\": "src"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Hajime MATSUMOTO",
+                    "email": "hajime.matsumoto@avap.co.jp"
+                }
+            ],
+            "time": "2019-11-15T08:11:00+00:00"
+        },
         {
             "name": "nora-php/kernel",
             "version": "dev-master",
@@ -1613,7 +1641,8 @@
     "stability-flags": {
         "nora-php/kernel": 20,
         "nora-php/system": 20,
-        "nora-php/utility": 20
+        "nora-php/utility": 20,
+        "nora-php/filter": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

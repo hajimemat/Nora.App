@@ -20,7 +20,8 @@
     "require": {
         "nora-php/kernel": "dev-master",
         "nora-php/system": "dev-master",
-        "nora-php/utility": "dev-master"
+        "nora-php/utility": "dev-master",
+        "nora-php/filter": "dev-master"
     },
     "repositories": [
         {
@@ -34,6 +35,10 @@
         {
             "type": "vcs",
             "url": "git@avap.codes:nora/php/utility"
+        },
+        {
+            "type": "vcs",
+            "url": "git@avap.codes:nora/php/filter"
         }
     ]
 }

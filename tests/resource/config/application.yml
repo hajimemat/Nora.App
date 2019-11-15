@@ -1,0 +1,9 @@
+application:
+  name: サンプルアプリケーション
+config:
+  files:
+    constant: constant.yml
+php:
+  lang: ja
+  timezone: Asia/Tokyo
+  display_errors: true

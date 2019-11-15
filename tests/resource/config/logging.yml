@@ -1,0 +1,13 @@
+# ロギング設定
+default: default
+handlers:
+  default:
+    - type: Nora\Logging\Handler\FileHandler
+      args:
+        name: !php/const "{APP_PROJECT_PATH}/var/log/development"
+      format:
+        type: Nora\Logging\Format\NoraStandardFormat
+      filter:
+        type: Nora\Logging\Filter\LevelFilter
+        args:
+           - all^strict
