@@ -2,12 +2,12 @@
 default: default
 handlers:
   default:
-    - type: Nora\Logging\Handler\FileHandler
+    - class: Nora\Logging\Writer\FileWriter
       args:
         name: !php/const "{APP_PROJECT_PATH}/var/log/development"
-      format:
-        type: Nora\Logging\Format\NoraStandardFormat
+      formatter:
+        class: Nora\Logging\Formatter\NoraFormatter
       filter:
-        type: Nora\Logging\Filter\LevelFilter
+        class: Nora\Logging\Filter\LevelFilter
         args:
            - all^strict

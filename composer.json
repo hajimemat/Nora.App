@@ -1,5 +1,5 @@
 {
-    "name": "nora-php/app",
+    "name": "nora-php/Nora.App",
     "authors": [
         {
             "name": "Hajime MATSUMOTO",
@@ -8,7 +8,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Nora\\App\\": "src"
+            "Nora\\App\\": "src",
+            "Fake\\": "tests/lib/Fake"
         }
     },
     "config": {
@@ -18,18 +19,14 @@
         "phpunit/phpunit": "^8.2"
     },
     "require": {
-        "nora-php/kernel": "dev-master",
         "nora-php/system": "dev-master",
         "nora-php/utility": "dev-master",
         "nora-php/filter": "dev-master",
         "nora-php/validation": "dev-master",
+        "nora-php/nora.di": "dev-master",
         "nora-php/logging": "dev-master"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@avap.codes:nora/php/kernel"
-        },
         {
             "type": "vcs",
             "url": "git@avap.codes:nora/php/system"
@@ -45,6 +42,10 @@
         {
             "type": "vcs",
             "url": "git@avap.codes:nora/php/validation"
+        },
+        {
+            "type": "vcs",
+            "url": "git@avap.codes:nora/php/Nora.DI"
         },
         {
             "type": "vcs",
