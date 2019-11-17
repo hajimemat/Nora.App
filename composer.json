@@ -1,5 +1,5 @@
 {
-    "name": "nora-php/Nora.App",
+    "name": "nora-php/app",
     "authors": [
         {
             "name": "Hajime MATSUMOTO",
@@ -23,7 +23,7 @@
         "nora-php/utility": "dev-master",
         "nora-php/filter": "dev-master",
         "nora-php/validation": "dev-master",
-        "nora-php/nora.di": "dev-master",
+        "nora-php/di": "dev-master",
         "nora-php/logging": "dev-master",
         "psr/log": "^1.1"
     },

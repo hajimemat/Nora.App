@@ -7,11 +7,14 @@ use Nora\App\AppInterface;
 use Nora\App\Extension;
 use Nora\DI\Module;
 use Fake\App\Provide;
+
 use Nora\App\Configuration\{
     ConfigInterface,
     DefineConstants,
     ErrorHandling
 };
+
+use Psr\Log\LoggerInterface;
 
 class App implements AppInterface
 {
@@ -20,8 +23,7 @@ class App implements AppInterface
 
     public function __construct(
         Provide\Hoge $hoge,
-        ConfigInterface $config,
-        LoggerInterface $logger
+        ConfigInterface $config
     ) {
         $this->hoge = $hoge;
         $this->config = $config;
@@ -29,8 +31,8 @@ class App implements AppInterface
         // 定数定義を行う
         (new DefineConstants)($config);
 
-        // エラーハンドリングを行う
-        (new ErrorHandling($logger))($config);
+        // // エラーハンドリングを行う
+        // (new ErrorHandling($logger))($config);
     }
 
     public function configure()

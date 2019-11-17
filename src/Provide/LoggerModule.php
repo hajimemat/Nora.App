@@ -8,13 +8,17 @@ use Nora\DI\Scope;
 
 use Nora\App\ConfigProvider;
 
+use Psr\Log\{
+    LoggerInterface
+};
+
 
 class LoggerModule extends Module
 {
     public function configure()
     {
-        $this
-            ->bind(LoggerInterface::class)
-            ->toProvider(LoggerProvider::class);
+        // $this
+        //     ->bind(LoggerInterface::class)
+        //     ->toProvider(
     }
 }
