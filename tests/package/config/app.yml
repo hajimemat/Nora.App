@@ -3,10 +3,18 @@ app:
   description: アプリケーションの設定
 # 定数
 constants:
+  APP_NAME: Fake\App
   APP_DEBUG: ABC
   MYSQL_HOST_NAME: mysql host name
-datatabasse:
-  devel:
-    host: mysql
-  prod:
-    host: aws
+# ログの設定
+logging:
+  writers:
+    - class: Nora\Logging\Writer\FileWriter
+      args:
+        name: develop.log
+      formatter:
+        class: Nora\Logging\Formatter\NoraFormatter
+      filter:
+        class: Nora\Logging\Filter\LevelFilter
+        args:
+           - all^strict

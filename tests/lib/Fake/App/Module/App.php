@@ -23,16 +23,17 @@ class App implements AppInterface
 
     public function __construct(
         Provide\Hoge $hoge,
-        ConfigInterface $config
+        ConfigInterface $config,
+        LoggerInterface $logger
     ) {
         $this->hoge = $hoge;
         $this->config = $config;
 
         // 定数定義を行う
-        (new DefineConstants)($config);
+        (new DefineConstants)($this->config);
 
-        // // エラーハンドリングを行う
-        // (new ErrorHandling($logger))($config);
+        // エラーハンドリングを行う
+        (new ErrorHandling($logger))(true);
     }
 
     public function configure()

@@ -12,13 +12,13 @@ class AppTest extends TestCase
     {
         $app = (new Bootstrap)->getApp(
             "Fake\App",
-            "app-devel",
+            "app-prod",
             __DIR__."/package"
         );
 
         // Singleton
         $this->assertSame($app->config, $app->config);
 
-        var_Dump(APP_DEBUG);
+        var_Dump(APP_DEBUG_HOGE);
     }
 }

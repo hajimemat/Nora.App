@@ -10,6 +10,14 @@ class Config implements
 {
     private $data = [];
 
+    /**
+     * データをシリアライズ
+     */
+    public function __sleep()
+    {
+        return ['data'];
+    }
+
     public function merge(self $config) : self
     {
         $this->data += $config->data;

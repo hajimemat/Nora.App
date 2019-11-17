@@ -1,0 +1,88 @@
+[2019-11-17 12:48:53.662231] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 12:55:26.358695] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 12:55:28.387069] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 12:55:35.405244] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 12:55:45.975795] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:05:14.214123] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:06:22.959825] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:06:31.885507] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:06:38.650693] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:08:02.003912] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:10:01.906637] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:10:11.482941] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:10:34.907051] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:10:34.907410] WARN Use of undefined constant APP_DEBUG_HOGE - assumed 'APP_DEBUG_HOGE' (this will throw an Error in a future version of PHP) {
+    "php_error_file": "/home/kurari/nora/app/tests/AppTest.php",
+    "php_error_line": 22
+}
+[2019-11-17 13:16:03.327272] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:16:03.327645] WARN Use of undefined constant APP_DEBUG_HOGE - assumed 'APP_DEBUG_HOGE' (this will throw an Error in a future version of PHP) {
+    "php_error_file": "/home/kurari/nora/app/tests/AppTest.php",
+    "php_error_line": 22
+}
+[2019-11-17 13:17:07.329861] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:17:07.330269] WARN Use of undefined constant APP_DEBUG_HOGE - assumed 'APP_DEBUG_HOGE' (this will throw an Error in a future version of PHP) {
+    "php_error_file": "/home/kurari/nora/app/tests/AppTest.php",
+    "php_error_line": 22
+}
+[2019-11-17 13:17:40.845056] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:17:40.845433] WARN Use of undefined constant APP_DEBUG_HOGE - assumed 'APP_DEBUG_HOGE' (this will throw an Error in a future version of PHP) {
+    "php_error_file": "/home/kurari/nora/app/tests/AppTest.php",
+    "php_error_line": 22
+}
+[2019-11-17 13:17:47.580495] INFO ロガー起動 {
+    "file": "/home/kurari/nora/app/src/Provide/LoggerProvider.php",
+    "line": 45
+}
+[2019-11-17 13:17:47.580877] WARN Use of undefined constant APP_DEBUG_HOGE - assumed 'APP_DEBUG_HOGE' (this will throw an Error in a future version of PHP) {
+    "php_error_file": "/home/kurari/nora/app/tests/AppTest.php",
+    "php_error_line": 22
+}

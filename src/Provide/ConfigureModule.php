@@ -6,7 +6,6 @@ namespace Nora\App\Provide;
 use Nora\DI\Module;
 use Nora\DI\Scope;
 
-use Nora\App\ConfigProvider;
 use Nora\App\Configuration\ConfigInterface;
 
 

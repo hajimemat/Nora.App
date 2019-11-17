@@ -24,8 +24,11 @@
         "nora-php/filter": "dev-master",
         "nora-php/validation": "dev-master",
         "nora-php/di": "dev-master",
+        "nora-php/cache": "dev-master",
         "nora-php/logging": "dev-master",
-        "psr/log": "^1.1"
+        "psr/log": "^1.1",
+        "psr/cache": "^1.0",
+        "psr/simple-cache": "^1.0"
     },
     "repositories": [
         {
@@ -47,6 +50,10 @@
         {
             "type": "vcs",
             "url": "git@avap.codes:nora/php/Nora.DI"
+        },
+        {
+            "type": "vcs",
+            "url": "git@avap.codes:nora/php/Nora.Cache"
         },
         {
             "type": "vcs",
