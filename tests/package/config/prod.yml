@@ -4,3 +4,15 @@ debug: false
 constants-prod:
   APP_DEBUG: false
   MYSQL_HOST_NAME: mysql_devel
+# ログの設定
+logging:
+  writers:
+    - class: Nora\Logging\Writer\FileWriter
+      args:
+        name: production.log
+      formatter:
+        class: Nora\Logging\Formatter\NoraFormatter
+      filter:
+        class: Nora\Logging\Filter\LevelFilter
+        args:
+           - all^strict^debug^notice^info

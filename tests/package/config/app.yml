@@ -1,3 +1,6 @@
+lang: ja
+timezone: Asia/Tokyo
+display_errors: true
 app:
   name: テストあぷり
   description: アプリケーションの設定

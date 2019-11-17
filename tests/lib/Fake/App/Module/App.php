@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace Fake\App\Module;
 
-use Nora\App\AppInterface;
-use Nora\App\Extension;
-use Nora\DI\Module;
 use Fake\App\Provide;
+
+use Nora\App\AppInterface;
 
 use Nora\App\Configuration\{
     ConfigInterface,
     DefineConstants,
+    SettingRuntime,
     ErrorHandling
 };
 
@@ -31,6 +31,9 @@ class App implements AppInterface
 
         // 定数定義を行う
         (new DefineConstants)($this->config);
+
+        // PHPの設定を変更する
+        (new SettingRuntime)($this->config);
 
         // エラーハンドリングを行う
         (new ErrorHandling($logger))(true);
