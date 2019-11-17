@@ -1,0 +1,6 @@
+env: devel
+database: devel
+debug: true
+constants-devel:
+  APP_DEBUG: true
+  MYSQL_HOST_NAME: mysql_prod

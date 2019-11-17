@@ -1,0 +1,6 @@
+env: prod
+database: prod
+debug: false
+constants-prod:
+  APP_DEBUG: false
+  MYSQL_HOST_NAME: mysql_devel

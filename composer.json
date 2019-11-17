@@ -24,7 +24,8 @@
         "nora-php/filter": "dev-master",
         "nora-php/validation": "dev-master",
         "nora-php/nora.di": "dev-master",
-        "nora-php/logging": "dev-master"
+        "nora-php/logging": "dev-master",
+        "psr/log": "^1.1"
     },
     "repositories": [
         {

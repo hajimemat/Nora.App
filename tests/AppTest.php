@@ -12,25 +12,13 @@ class AppTest extends TestCase
     {
         $app = (new Bootstrap)->getApp(
             "Fake\App",
-            "app-prod"
+            "app-devel",
+            __DIR__."/package"
         );
 
-        var_Dump(($app->hoge)());
+        // Singleton
+        $this->assertSame($app->config, $app->config);
 
-        // // カーネル作成
-        // $kernel = new AppKernel([
-        //     'root_path' => __DIR__.'/package',
-        //     'cache_path' => __DIR__.'/package/tmp',
-        //     'env' => 'development'
-        // ]);
-        //
-        // // カーネル起動
-        // $app = $kernel->boot();
-        //
-        // // 設定がきちんと読み込めていれば
-        // $this->assertEquals(
-        //     'サンプルアプリケーション',
-        //     $app->configRead('application.name')
-        // );
+        var_Dump(APP_DEBUG);
     }
 }

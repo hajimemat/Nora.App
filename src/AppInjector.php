@@ -7,6 +7,7 @@ use Nora\App\Exception\InvalidContext;
 use Nora\DI\InjectorInterface;
 use Nora\DI\Injector;
 use Nora\DI\Name;
+use Nora\DI\Bind;
 use Nora\DI\Module as AbstractModule;
 use Nora\DI\NullModule;
 
@@ -84,6 +85,8 @@ class AppInjector implements InjectorInterface
         }
 
         $module->override(new Module($this->meta));
+
+        (new Bind($module->getContainer(), InjectorInterface::class))->toInstance($this);
 
         return $module;
 

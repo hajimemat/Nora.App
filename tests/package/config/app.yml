@@ -1,0 +1,12 @@
+app:
+  name: テストあぷり
+  description: アプリケーションの設定
+# 定数
+constants:
+  APP_DEBUG: ABC
+  MYSQL_HOST_NAME: mysql host name
+datatabasse:
+  devel:
+    host: mysql
+  prod:
+    host: aws
