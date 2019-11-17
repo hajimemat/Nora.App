@@ -24,16 +24,18 @@ class LoggerFactory extends Logging\LoggerFactory
     {
         $Logger = new Logging\Logger();
 
-        foreach ($spec['writers'] as $writer) {
-            $Writer = ($this->writerFactory)([
-                'class' => $writer['class'],
-                'args' => $writer['args']
-            ]);
-            // フォーマットをセット
-            $Writer->setFormatter((new FormatterFactory)($writer['formatter']));
-            $Writer->setFilter((new FilterFactory)($writer['filter']));
+        if ($spec['writers']) {
+            foreach ($spec['writers'] as $writer) {
+                $Writer = ($this->writerFactory)([
+                    'class' => $writer['class'],
+                    'args' => $writer['args']
+                ]);
+                // フォーマットをセット
+                $Writer->setFormatter((new FormatterFactory)($writer['formatter']));
+                $Writer->setFilter((new FilterFactory)($writer['filter']));
 
-            $Logger->addWriter($Writer);
+                $Logger->addWriter($Writer);
+            }
         }
         return $Logger;
     }

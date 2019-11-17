@@ -14,7 +14,7 @@ class DefineConstants
         $env = $config['env'];
         $constants = [];
         foreach (["constants", "constants-{$env}"] as $key) {
-            $constants = array_merge($constants, $config[$key]);
+            $constants = array_merge($constants, $config[$key] ?? []);
         }
 
         foreach ($constants as $k => $v) {

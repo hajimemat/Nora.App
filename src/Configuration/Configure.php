@@ -21,9 +21,13 @@ class Configure implements ConfigureInterface
             $meta->appDir,
             $context
         );
-        $result = yaml_parse_file($file, $pos = 0, $ndocs);
 
-        $this->config->load($result);
+        if (file_exists($file)) {
+            $result = yaml_parse_file($file, $pos = 0, $ndocs);
+            if ($result) {
+                $this->config->load($result);
+            }
+        }
     }
 
     public function configure() : Config
