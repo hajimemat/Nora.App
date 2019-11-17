@@ -19,10 +19,6 @@
         "phpunit/phpunit": "^8.2"
     },
     "require": {
-        "nora-php/system": "dev-master",
-        "nora-php/utility": "dev-master",
-        "nora-php/filter": "dev-master",
-        "nora-php/validation": "dev-master",
         "nora-php/di": "dev-master",
         "nora-php/cache": "dev-master",
         "nora-php/logging": "dev-master",
@@ -33,22 +29,6 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@avap.codes:nora/php/system"
-        },
-        {
-            "type": "vcs",
-            "url": "git@avap.codes:nora/php/utility"
-        },
-        {
-            "type": "vcs",
-            "url": "git@avap.codes:nora/php/filter"
-        },
-        {
-            "type": "vcs",
-            "url": "git@avap.codes:nora/php/validation"
-        },
-        {
-            "type": "vcs",
             "url": "git@avap.codes:nora/php/Nora.DI"
         },
         {
@@ -57,7 +37,7 @@
         },
         {
             "type": "vcs",
-            "url": "git@avap.codes:nora/php/logging"
+            "url": "git@avap.codes:nora/php/Nora.Logging"
         }
     ]
 }
