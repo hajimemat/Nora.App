@@ -65,19 +65,6 @@ class Front implements FrontInterface
         ($this)($this->request, $this->response);
     }
 
-    private function startup($request, $response)
-    {
-        // ロガーを拡張
-        $ip = $request->ip();
-        $id = $request->id;
-        $logger = $this->logger->context([
-            'ip' => $ip,
-            'id' => $id
-        ]);
-        $this->pushLogger($logger);
-
-    }
-
     /**
      * 実行
      */
@@ -86,7 +73,7 @@ class Front implements FrontInterface
         ResponseInterface $response
     ) {
         // ルートデータを読み込む
-        $this->router->map('get', '/', '/');
+        $this->router->map('get', '/', '/index');
 
         // リクエストIDを付与
         $this->pushLogger($this->logger->context([
