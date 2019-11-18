@@ -65,14 +65,14 @@ class ErrorHandling
      */
     public function phpExceptionReport(\Throwable $exception)
     {
-        $level = Log::LEVEL_ERROR;
+        $level = LogLevel::LEVEL_ERROR;
         if ($exception instanceof LoggableExceptionInterface) {
             $level = $exception->getPriority();
         }
 
         $this->logger->log(
             $level,
-            $exception->getMessage(),
+            sprintf('(%s) %s', get_class($exception), $exception->getMessage()),
             [
                 "file" => (string) $exception->getFile(),
                 "line" => (string) $exception->getLine(),

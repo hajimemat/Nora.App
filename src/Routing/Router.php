@@ -7,4 +7,10 @@ use Nora\DI\Module;
 
 class Router implements RouterInterface
 {
+    public function route($request)
+    {
+        $path = $request->getUri()->getPath();
+        $method = $request->getMethod();
+        var_dump($method, $path);
+    }
 }

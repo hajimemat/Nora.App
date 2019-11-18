@@ -34,7 +34,7 @@ class AppInjector implements InjectorInterface
 
     public function getInstance(string $interface)
     {
-        return $this->module->getInstance($interface);
+        return $this->injector->getInstance($interface);
     }
 
     public function getCachedInstance($interface, $name = Name::ANY)

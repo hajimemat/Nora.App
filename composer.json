@@ -23,6 +23,7 @@
         "nora-php/cache": "dev-master",
         "nora-php/logging": "dev-master",
         "nora-php/http": "dev-master",
+        "nora-php/system": "dev-master",
         "psr/log": "^1.1",
         "psr/cache": "^1.0",
         "psr/simple-cache": "^1.0"
@@ -43,6 +44,10 @@
         {
             "type": "vcs",
             "url": "git@avap.codes:nora/php/Nora.Http"
+        },
+        {
+            "type": "vcs",
+            "url": "git@avap.codes:nora/php/Nora.System"
         }
     ]
 }
