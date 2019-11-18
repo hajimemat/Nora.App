@@ -1,28 +1,28 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Logging;
 
 use Psr\Log\{
     LoggerInterface
 };
 
-use Nora\Logging;
+use Nora\Logging as Base;
 use Nora\Logging\FormatterFactory;
 use Nora\Logging\FilterFactory;
 
-class LoggerFactory extends Logging\LoggerFactory
+class LoggerFactory extends Base\LoggerFactory
 {
     private $writerFactory;
 
-    public function __construct(Logging\WriterFactory $writerFactory)
+    public function __construct(Base\WriterFactory $writerFactory)
     {
         $this->writerFactory = $writerFactory;
     }
 
-    public function __invoke($spec) : Logging\Logger
+    public function __invoke($spec) : Base\Logger
     {
-        $Logger = new Logging\Logger();
+        $Logger = new Base\Logger();
 
         if ($spec['writers']) {
             foreach ($spec['writers'] as $writer) {

@@ -1,27 +1,28 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Logging;
 
 use Psr\Log\{
     LoggerInterface
 };
 
-use Nora\Logging;
+use Nora\Logging as Base;
+use Nora\App\AppMeta;
 
-class LoggerWriterFactory extends Logging\WriterFactory
+class LoggerWriterFactory extends Base\WriterFactory
 {
     private $meta;
 
-    public function __construct(\Nora\App\Meta $meta)
+    public function __construct(AppMeta $meta)
     {
         $this->meta = $meta;
     }
 
-    public function __invoke(array $spec) : Logging\Writer
+    public function __invoke(array $spec) : Base\Writer
     {
         // Writerの場合はファイル名を追加する
-        if ($spec['class'] === Logging\Writer\FileWriter::class) {
+        if ($spec['class'] === Base\Writer\FileWriter::class) {
             $args = array_values($spec['args']);
             $args[0] = $args[0]{0} === "/" ? 
                 $args[0]:

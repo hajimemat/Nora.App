@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Logging;
 
 use Nora\DI\Module;
 use Nora\DI\Scope;

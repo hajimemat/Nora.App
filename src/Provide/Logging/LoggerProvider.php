@@ -1,31 +1,23 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Logging;
 
 use Psr\Log\LoggerInterface;
 
-use Nora\DI\Module;
-use Nora\DI\Scope;
 use Nora\DI\ProviderInterface;
 
-use Nora\App\Meta;
-use Nora\App\Extension;
-use Nora\App\Configuration\{
-    ConfigureFactory
-};
+use Nora\App\AppMeta;
 
-use Nora\App\Configuration\ConfigInterface;
-use Nora\Logging\{
-    WriterFactory
-};
+use Nora\App\Provide\Configure\ConfigInterface;
+use Nora\Logging\WriterFactory;
 
 class LoggerProvider implements ProviderInterface
 {
     private $meta;
 
     public function __construct(
-        Meta $meta,
+        AppMeta $meta,
         ConfigInterface $config,
         LoggerFactory $factory)
     {

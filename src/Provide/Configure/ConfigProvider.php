@@ -1,18 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
-
+namespace Nora\App\Provide\Configure;
 
 use Nora\DI\ProviderInterface;
-
-use Nora\App\Extension;
-use Nora\App\Meta;
-use Nora\App\Configuration\{
-    ConfigureFactory,
-    DefineConstants
-};
-
+use Nora\App\AppMeta;
 use Psr\SimpleCache\CacheInterface;
 
 
@@ -20,7 +12,7 @@ class ConfigProvider implements ProviderInterface
 {
     private $meta;
 
-    public function __construct(Meta $meta, CacheInterface $cache)
+    public function __construct(AppMeta $meta, CacheInterface $cache)
     {
         $this->meta = $meta;
         $this->cache = $cache;
@@ -29,7 +21,7 @@ class ConfigProvider implements ProviderInterface
     public function get( )
     {
         // キャッシュがあればキャッシュを返す
-        if ($this->cache->has('config')) {
+        if ($this->cache->has('config') && !preg_match('/devel/', $this->meta->context)) {
             return $this->cache->get('config');
         }
 

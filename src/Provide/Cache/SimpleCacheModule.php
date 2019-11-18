@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Cache;
 
 use Nora\DI\Module;
 
@@ -9,9 +9,10 @@ use Psr\{
     Log\LoggerInterface,
     SimpleCache\CacheInterface
 };
-
-
-class CacheModule extends Module
+/**
+ * キャッシュモジュール
+ */
+class SimpleCacheModule extends Module
 {
     public function configure()
     {

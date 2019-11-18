@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Nora\App;
 
 
-class Meta 
+class AppMeta 
 {
     public $name;
     public $context;

@@ -12,6 +12,6 @@ class CliModule extends Module
 {
     public function configure()
     {
-        $this->install(new RoutingModule());
+        //$this->install(new RoutingModule());
     }
 }

@@ -14,6 +14,11 @@ use Psr\Log\LoggerInterface;
 use Nora\Routing\RouterInterface;
 use Ramsey\Uuid\UuidFactoryInterface;
 
+use Nora\App\Front\Exception\{
+    MethodNotAllowed,
+    NotFound
+};
+
 class Front implements FrontInterface
 {
     private $injector;
@@ -73,21 +78,18 @@ class Front implements FrontInterface
         ResponseInterface $response
     ) {
         // ルートデータを読み込む
-        $this->router->map('get', '/', '/index');
+        $this->router->map('post', '/', '/');
 
         // リクエストIDを付与
         $this->pushLogger($this->logger->context([
-            'request-id' => ($this->uuidFactory)->uuid1()
+            'request-id' => ($this->uuidFactory)->uuid1(),
+            'request-sig' => sprintf(
+                "(%s) %s ",
+                $request->getMethod(),
+                $request->getUri()->getPath()
+            )
         ]));
 
-        // ルーティング処理
-        $route = $this->router->route($request);
-        var_dump($route);
-
-        // $request = (new RequestFactory)($request);
-        // $response = (new ResponseFactory)($response);
-        // // 初期化
-        // $this->startup($request, $response);
         // 受付ログを残す
         $this->logger->debug(
             sprintf(
@@ -97,17 +99,23 @@ class Front implements FrontInterface
             )
         );
 
+        // ルーティング処理
+        $route = $this->router->route($request);
 
-        //
-        //
-        // // レスポンスを書き込む
-        // $this->response->write('aaa');
-        // $this->response->write('bbbb');
-        //
-        //
-        $this->logger->info("完了");
-        // $this->logger->info("完了");
-        // $this->logger->info("完了");
-        // $this->logger->info("完了");
+        // ルーティング先が無い
+        if ($route[0] === ($this->router)::NOT_FOUND) {
+            throw new NotFound("Page Not Found");
+        }
+
+        // メソッドが許可されていない
+        if ($route[0] === ($this->router)::METHOD_NOT_ALLOWED) {
+            throw new MethodNotAllowed("Method Not Allowed");
+        }
+
+        $this->logger->info("完了 : ".$response->getStatusCode()." ".$response->getReasonPhrase());
+
+        $response->getBody()->rewind();
+        echo $response->getBody()->getContents();
+
     }
 }

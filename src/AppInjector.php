@@ -22,12 +22,12 @@ class AppInjector implements InjectorInterface
     public function __construct(
         string $name,
         string $context,
-        Meta $meta = null,
+        AppMeta $meta = null,
         string $cacheNamespace = null
     ) {
         $this->context = $context;
-        $this->meta = $meta instanceof Meta ?
-            $meta: new Meta($name, $context);
+        $this->meta = $meta instanceof AppMeta ?
+            $meta: new AppMeta($name, $context);
         $this->tmpDir = $this->meta->tmpDir();
         $this->injector = new Injector($this->getModule());
     }
@@ -56,40 +56,10 @@ class AppInjector implements InjectorInterface
             return $this->module;
         }
 
-        $contextsArray = array_reverse(
-            explode(
-                '-',
-                $this->context
-            )
-        );
-
-        $module = new NullModule();
-
-        foreach ($contextsArray as $contextItem) {
-            $class = $this->meta->name . '\\Module\\' . ucwords($contextItem) . 'Module';
-            if (!class_exists($class)) {
-                $class = 'Nora\\App\\Context\\' . ucwords($contextItem) . "Module";
-            }
-
-            if (!is_a($class, AbstractModule::class, true)) {
-                throw new InvalidContext($contextItem);
-            }
-
-            $module = is_subclass_of($class, AppModule::class) ?
-                new $class($this->meta, $module):
-                new $class($module);
-        }
-
-        if (!$module instanceof AbstractModule) {
-            throw new InvalidModule;
-        }
-
-        $module->override(new Module($this->meta));
-
+        $module = (new ModuleFactory)($this->meta, $this->context);
         (new Bind($module->getContainer(), InjectorInterface::class))->toInstance($this);
 
         return $module;
-
     }
 
 }

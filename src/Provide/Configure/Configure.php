@@ -1,8 +1,8 @@
 <?php
 declare(strict_types=1);
-namespace Nora\App\Configuration;
+namespace Nora\App\Provide\Configure;
 
-use Nora\App\Meta;
+use Nora\App\AppMeta as Meta;
 
 class Configure implements ConfigureInterface
 {

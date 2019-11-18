@@ -12,8 +12,9 @@ class Bootstrap
         string $appDir = '',
         string $cacheNamespace = null
     ) : AppInterface {
+
         return $this->newApp(
-            new Meta($name, $contexts, $appDir),
+            new AppMeta($name, $contexts, $appDir),
             $contexts,
             null,
             $cacheNamespace
@@ -21,7 +22,7 @@ class Bootstrap
     }
 
     public function newApp(
-        Meta $meta,
+        AppMeta $meta,
         string $contexts,
         Cache $cache = null,
         string $cacheNamespace = null

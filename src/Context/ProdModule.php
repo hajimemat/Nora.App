@@ -9,6 +9,6 @@ class ProdModule extends Module
 {
     public function configure()
     {
-        $this->install(new Provide\CacheModule());
+        // $this->install(new Provide\CacheModule());
     }
 }

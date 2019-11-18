@@ -1,14 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Nora\App\Provide;
+namespace Nora\App\Provide\Configure;
 
 use Nora\DI\Module;
-use Nora\DI\Scope;
 
-use Nora\App\Configuration\ConfigInterface;
-
-
+/**
+ * 設定モジュール
+ */
 class ConfigureModule extends Module
 {
     public function configure()
