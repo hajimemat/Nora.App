@@ -11,6 +11,5 @@ class Router implements RouterInterface
     {
         $path = $request->getUri()->getPath();
         $method = $request->getMethod();
-        var_dump($method, $path);
     }
 }

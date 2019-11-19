@@ -18,5 +18,9 @@ class BuiltinModule extends Base
         $this->install(new Provide\Logging\LoggerModule());
         // ルーティングモジュール
         $this->install(new Provide\Routing\RoutingModule());
+        // リソースモジュール
+        $this->install(new Provide\Resource\ResourceModule());
+        // ドメインモジュール
+        $this->install(new Provide\Domain\DomainModule());
     }
 }

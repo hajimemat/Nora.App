@@ -28,7 +28,7 @@ class Router extends Routing\Standard\Router implements Routing\RouterInterface
 
         // 設定を読んでルートを追加する
         $target = [];
-        $this->convertResourceMap($target, $config['resource']);
+        $this->convertResourceMap($target, $config['resource']['pages']);
         foreach ($target as [$method, $uri, $meta]) {
             $this->collector->addRoute($method, $uri, $meta);
         }
